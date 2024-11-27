@@ -21,7 +21,7 @@ export async function DELETE(request:Request,{params}:{params:{id:string}}){
 
     const deletedUser=users.splice(userIndex,1);
 
-    return new Response(JSON.stringify({message:"user deleted", user: deletedUser[0]}),{
+    return new Response(JSON.stringify({message:"user deleted", user: deletedUser[0],remainingUsers:users}),{
         headers:{
             "Content-Type":"application/json"
         },
